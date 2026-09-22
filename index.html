@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+
+<body class="bg-slate-200">
+
+
+    <div class=" bg-white max-w-md mx-auto mt-10 flex flex-col rounded-xl overflow-hidden shadow-xl">
+
+
+        <h1
+            class="bg-linear-45 from-purple-500 to-pink-500 text-center text-white text-3xl p-8 font-bold tracking-wider uppercase">
+            TODO App</h1>
+
+
+        <form action="" id="todo-form" class="flex px-5 py-4 gap-3 mt-3">
+
+            <input id="todo-input" type="text" placeholder="Enter your task..."
+                class="flex-1 border border-gray-400 rounded-lg px-4 text-md">
+
+
+            <button id="form-btn" class="bg-purple-500 hover:bg-purple-600 px-5 py-3 rounded-lg text-white font-bold tracking-widest cursor-pointer" type="submit">ADD</button>
+
+
+        </form>
+
+        <button id="cancel-btn" class="text-xs text-right px-7 underline text-gray-500 hidden">Cancel todo</button>
+
+        <div class="flex justify-between px-5 py-5 text-xs text-gray-500 border-b border-gray-300 m-6">
+            <p id="task-count">TASKS(0)</p>
+            <p id="complete-count">COMPLETED : 0</p>
+        </div>
+
+        <ul id="todo-list" class="flex flex-col m-4 gap-3">
+            
+            
+        </ul>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
