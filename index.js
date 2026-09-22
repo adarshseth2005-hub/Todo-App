@@ -140,7 +140,9 @@ function deleteTodo(e, id) {
         }
     })
     localStorage.setItem("todos", JSON.stringify(todos))
-    renderTodo()
+    
+    taskCount.textContent = `TASKS (${todos.length})`;
+    completeCount.textContent = `COMPLETED : ${todos.filter(todo =>todo.isCompleted).length}`
 }
 
 // edit operation
