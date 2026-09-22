@@ -1,22 +1,6 @@
 
 
-let todos = [
-    {
-        id: Date.now(),
-        text: "Waatch lecture",
-        isCompleted: false
-    },
-    {
-        id: Date.now() + 1,
-        text: "Go to college",
-        isCompleted: false
-    },
-    {
-        id: Date.now() + 2,
-        text: "go to gym",
-        isCompleted: false
-    }
-];
+let todos = JSON.parse(localStorage.getItem("todos")) || [];
 
 // selecting elements
 
@@ -44,7 +28,7 @@ todoForm.addEventListener("submit", (e) => {
 
     if (isEdit) {
         updateEdit(todoValue);
-
+        localStorage.setItem("todos", JSON.stringify(todos));
     }
     else {
         const newtodo = {
@@ -54,7 +38,7 @@ todoForm.addEventListener("submit", (e) => {
         }
 
         todos.push(newtodo);
-
+        localStorage.setItem("todos", JSON.stringify(todos))
         addTodo(newtodo);
     }
 
@@ -93,6 +77,7 @@ todoList.addEventListener("click", (e) => {
             return todo;
         })
 
+        localStorage.setItem("todos", JSON.stringify(todos))
         renderTodo();
 
 
@@ -154,7 +139,7 @@ function deleteTodo(e, id) {
             return todo;
         }
     })
-
+    localStorage.setItem("todos", JSON.stringify(todos))
     renderTodo()
 }
 
